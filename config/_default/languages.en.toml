@@ -14,15 +14,15 @@ title = "Aldar Ali"
   # description = "My awesome website"
   # copyright = "Copy, _right?_ :thinking_face:"
 
-# [params.author]
-#   name = "Aldar Ali"
-#   email = "youremail@example.com"
-#   image = "img/blowfish_logo.png"
+[params.author]
+  name = "Aldar Ali"
+  email = "youremail@example.com"
+  image = "/images/me.jpeg"
 #   imageQuality = 96
 #   headline = "I'm only human"
 #   bio = "A little bit about you"
-#   links = [
-#     { email = "mailto:hello@your_domain.com" },
+  links = [
+  { email = "mailto:hello@your_domain.com" },
 #     { link = "https://link-to-some-website.com/" },
 #     { amazon = "https://www.amazon.com/hz/wishlist/ls/wishlist-id" },
 #     { apple = "https://www.apple.com" },
@@ -35,7 +35,7 @@ title = "Aldar Ali"
 #     { facebook = "https://facebook.com/username" },
 #     { flickr = "https://www.flickr.com/photos/username/" },
 #     { foursquare = "https://foursquare.com/username" },
-#     { github = "https://github.com/username" },
+    { github = "https://github.com/AldarAli" },
 #     { gitlab = "https://gitlab.com/username" },
 #     { google = "https://www.google.com/" },
 #     { hashnode = "https://username.hashnode.dev" },
@@ -44,7 +44,7 @@ title = "Aldar Ali"
 #     { keybase = "https://keybase.io/username" },
 #     { kickstarter = "https://www.kickstarter.com/profile/username" },
 #     { lastfm = "https://lastfm.com/user/username" },
-#     { linkedin = "https://linkedin.com/in/username" },
+    { linkedin = "https://www.linkedin.com/in/aldar-ali" },
 #     { mastodon = "https://mastodon.instance/@username" },
 #     { medium = "https://medium.com/username" },
 #     { microsoft = "https://www.microsoft.com/" },
@@ -70,4 +70,4 @@ title = "Aldar Ali"
 #     { youtube = "https://youtube.com/username" },
 #     { ko-fi = "https://ko-fi.com/username" },
 #     { codeberg = "https://codeberg.org/username"},
-#   ]
+  ]
