@@ -33,3 +33,6 @@ yarn.lock
 
 # Hugo build lock file
 .hugo_build.lock
+
+# ignore obsidian files
+.obsidian/
