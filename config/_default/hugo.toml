@@ -22,7 +22,7 @@ googleAnalytics = "G-T3CSF57JSF"
 [params.author]
   name = "Aldar Ali"
   image = "img/me.jpeg"
-  headline = "Cybersecurity Entusiast"
+  headline = "I'm an IT consultant and junior pentester passionate about cybersecurity, networking, and data. I solve IT challenges and love exploring new tech."
   bio = ""
   links = [
     { email = "mailto:aldar@tech.tech" },

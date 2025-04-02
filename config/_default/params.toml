@@ -113,7 +113,7 @@ smartTOCHideUnfocusedChildren = false
 
 
 [buymeacoffee]
-  identifier = ""
+  identifier = "aldarali"
   globalWidget = true
   globalWidgetMessage = ""
   globalWidgetColor = "#FFDD00"
