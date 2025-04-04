@@ -17,8 +17,8 @@ mainSections = ["posts"]
 disableImageOptimization = true
 disableTextInHeader = true
 
-defaultFeaturedImage = "/img/background.jpg"
-defaultBackgroundImage = "/img/background.jpg"
+#defaultFeaturedImage = ""
+defaultBackgroundImage = "/img/wallhaven5x.png"
 
 highlightCurrentMenuArea = true
 smartTOC = true
@@ -35,7 +35,7 @@ smartTOCHideUnfocusedChildren = false
 
 [homepage]
   layout = "background" # valid options: page, profile, custom
-  #homepageImage = "img/background.jpg"
+  homepageImage = "img/wallhaven5x.png"
   showRecent = true
   showRecentItems = 12
   showMoreLink = true

@@ -47,7 +47,7 @@ layoutBackgroundHeaderSpace: false
         </tr>
         <tr>
             <td><img class="customEntitityLogo" src="Sikt.png"/></td>
-            <td><a href="https://sikt.no/en/home" target="_blank">Norwegian Agency for Shared Services in Education and Research</a></td>
+            <td><a href="https://sikt.no/en/home" target="_blank">Sikt</a></td>
             <td>Internship System Developer</td>
             <td>2023 - 2023</td>
             <td>Oslo</br>Norway</td>
