@@ -1,7 +1,7 @@
 languageCode = "en"
 languageName = "English"
 weight = 1
-title = "Aldar Ali"
+title = "Aldar Ali | IT Consultant & Cybersecurity Specialist"
 
 [params]
   displayName = "English"
@@ -10,4 +10,5 @@ title = "Aldar Ali"
   dateFormat = "2006-01-02"
   logo = "img/logo.png"
   #secondaryLogo = ""
-  description = ""
+  description = "IT consultant and cybersecurity specialist providing penetration testing, network security, and data protection services. Expert solutions for modern security challenges."
+  keywords = ["Aldar Ali", "cybersecurity", "penetration testing", "IT consultant", "network security", "data protection"]
