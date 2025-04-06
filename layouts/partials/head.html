@@ -5,6 +5,9 @@
   {{ end }}
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   {{/* Title */}}
   {{ if .IsHome -}}
   <title>{{ .Site.Title | emojify }}</title>
@@ -15,10 +18,10 @@
   {{- end }}
   {{/* Metadata */}}
   {{ with (.Params.Summary | default .Params.Description) | default .Site.Params.description -}}
-  <meta name="description" content="{{ . }}" />
+  <meta name="description" content="{{ . | truncate 160 }}" />
   {{- end }}
-  {{ with  .Params.Tags | default .Site.Params.keywords -}}
-  <meta name="keywords" content="{{ range . }}{{ . }}, {{ end -}}" />
+  {{ with .Params.Tags | default .Site.Params.keywords -}}
+  <meta name="keywords" content="{{ delimit . ", " }}" />
   {{- end }}
   {{ with .Site.Params.robots }}
   <meta name="robots" content="{{ . }}" />
@@ -32,6 +35,27 @@
   <link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink ($.Site.Title | emojify) |
   safeHTML }}
   {{ end -}}
+
+  <meta property="og:locale" content="{{ .Site.LanguageCode }}" />
+  <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+  <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} &middot; {{ .Site.Title }}{{ end }}" />
+  <meta property="og:description" content="{{ with (.Params.Summary | default .Params.Description) | default .Site.Params.description }}{{ . }}{{ end }}" />
+  <meta property="og:url" content="{{ .Permalink }}" />
+  <meta property="og:site_name" content="{{ .Site.Title }}" />
+  {{ with .Site.Params.images }}{{ range first 1 . }}
+  <meta property="og:image" content="{{ . | absURL }}" />
+  {{ end }}{{ end }}
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} &middot; {{ .Site.Title }}{{ end }}" />
+  <meta name="twitter:description" content="{{ with (.Params.Summary | default .Params.Description) | default .Site.Params.description }}{{ . }}{{ end }}" />
+  {{ with .Site.Params.images }}{{ range first 1 . }}
+  <meta name="twitter:image" content="{{ . | absURL }}" />
+  {{ end }}{{ end }}
+  {{ with .Site.Params.social.twitter }}
+  <meta name="twitter:site" content="@{{ . }}" />
+  <meta name="twitter:creator" content="@{{ . }}" />
+  {{ end }}
   {{/* Asset bundles */}}
   {{ $assets := newScratch }}
   {{ $cssScheme := resources.Get (printf "css/schemes/%s.css" (.Site.Params.colorScheme | default "blowfish")) }}
@@ -69,11 +93,8 @@
   {{ $jsMobileMenu := resources.Get "js/mobilemenu.js" }}
   {{ $assets.Add "js" (slice $jsMobileMenu) }}
   {{ if $assets.Get "js" }}
-  {{ $bundleJS := $assets.Get "js" | resources.Concat "js/main.bundle.js" | resources.Minify | resources.Fingerprint
-  "sha512" }}
-  <script defer type="text/javascript" id="script-bundle" src="{{ $bundleJS.RelPermalink }}"
-    integrity="{{ $bundleJS.Data.Integrity }}" data-copy="{{ i18n " code.copy" }}" data-copied="{{ i18n " code.copied"
-    }}"></script>
+  {{ $jsBundle := $assets.Get "js" | resources.Concat "js/main.bundle.js" | resources.Minify | resources.Fingerprint "sha512" }}
+  <script defer type="text/javascript" src="{{ $jsBundle.RelPermalink }}" integrity="{{ $jsBundle.Data.Integrity }}"></script>
   {{ end }}
   {{ if not .Site.Params.disableImageZoom | default true }}
   {{ $zoomJS := resources.Get "lib/zoom/zoom.min.js" | resources.Fingerprint "sha512" }}

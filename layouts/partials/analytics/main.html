@@ -1,12 +1,15 @@
-{{ with site.Params.fathomAnalytics.site }}
-{{ partial "analytics/fathom.html" }}
-{{ end }}
-{{ with site.Config.Services.GoogleAnalytics.ID }}
-{{ partial "analytics/ga.html" }}
-{{ end }}
-{{ with site.Params.umamiAnalytics.websiteid }}
-{{ partial "analytics/umami.html" }}
-{{ end }}
-{{ with site.Params.selineAnalytics.token }}
-{{ partial "analytics/seline.html" }}
+/main.html
+{{ if .Site.GoogleAnalytics }}
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.GoogleAnalytics }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '{{ .Site.GoogleAnalytics }}', {
+    'page_title': '{{ .Title }}',
+    'page_path': '{{ .RelPermalink }}'
+  });
+</script>
 {{ end }}

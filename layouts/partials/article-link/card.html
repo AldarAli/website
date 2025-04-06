@@ -35,6 +35,15 @@
       {{- end -}}
       {{- end -}}
 
+      {{ $image := .Resources.GetMatch "featured-image" }}
+      {{ if $image }}
+        {{ $webp := $image.Resize "600x webp" }}
+        {{ $jpg := $image.Resize "600x" }}
+        <picture>
+          <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
+          <img src="{{ $jpg.RelPermalink }}" alt="{{ .Title }}" width="{{ $jpg.Width }}" height="{{ $jpg.Height }}" class="w-full thumbnail_card">
+        </picture>
+      {{ end }}
 
       {{ if and .Draft .Site.Params.article.showDraftLabel }}
       <span class="absolute top-0 right-0 m-2">

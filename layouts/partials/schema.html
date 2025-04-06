@@ -15,35 +15,33 @@
     }
   }
   </script>
-{{ else if .IsPage }}
+{{ else if or .IsPage }}
   {{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
   <script type="application/ld+json">
-  [{
+  {
     "@context": "https://schema.org",
-    "@type": "Article",
-    "articleSection": "{{ (site.GetPage .Section).Title | safeJS }}",
-    "name": "{{ .Title | safeJS }}",
-    "headline": "{{ .Title | safeJS }}",
-    {{ with .Description }}"description": "{{ . | safeJS }}",{{ end }}
-    {{ with .Summary }}"abstract": "{{ . | safeJS }}",{{ end }}
-    {{ with .Site.LanguageCode }}"inLanguage": "{{ . }}",{{ end }}
-    "url" : "{{ .Permalink }}",
-    "author" : {
-      "@type": "Person",
-      "name": "{{ .Site.Params.Author.name | safeJS }}"
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ .Permalink }}"
     },
-    {{ with .PublishDate }}"copyrightYear": "{{ .Format "2006" }}",{{ end }}
-    {{ with .Date }}"dateCreated": "{{ .Format $iso8601 }}",{{ end }}
-    {{ with .PublishDate }}"datePublished": "{{ .Format $iso8601 }}",{{ end }}
-    {{ with .ExpiryDate }}"expires": "{{ .Format $iso8601 }}",{{ end }}
+    "headline": "{{ .Title }}",
+    {{ with .Params.description }}"description": "{{ . }}",{{ end }}
+    {{ with .Params.featuredImage }}"image": "{{ . | absURL }}",{{ end }}
+    "datePublished": "{{ .PublishDate.Format $iso8601 }}",
     {{ with .Lastmod }}"dateModified": "{{ .Format $iso8601 }}",{{ end }}
-    {{ if .Keywords }}
-    {{ with .Keywords }}"keywords": {{ . }},{{ end }}
-    {{ else }}
-    {{ with .Params.tags }}"keywords": {{ . }},{{ end }}
-    {{ end }}
-    "mainEntityOfPage": "true",
-    "wordCount": "{{ .WordCount }}"
-  }]
+    "author": {
+      "@type": "Person",
+      "name": "{{ .Site.Params.Author.name }}"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ .Site.Title }}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ "logo.png" | absURL }}"
+      }
+    }
+  }
   </script>
 {{ end }}
