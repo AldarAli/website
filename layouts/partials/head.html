@@ -1,10 +1,13 @@
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
   {{ with .Site.Language.Params.htmlCode | default .Site.LanguageCode }}
   <meta http-equiv="content-language" content="{{ . }}" />
   {{ end }}
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,40 +29,22 @@
   {{ with .Site.Params.robots }}
   <meta name="robots" content="{{ . }}" />
   {{ end }}
-  {{ with .Params.robots }}
-  <meta name="robots" content="{{ . }}" />
-  {{ end }}
-  <link rel="canonical" href="{{ .Permalink }}" />
+  <link rel="canonical" href="https://aldar.tech{{ .RelPermalink }}" />
   {{ range .AlternativeOutputFormats -}}
   {{ printf `
   <link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink ($.Site.Title | emojify) |
   safeHTML }}
   {{ end -}}
 
-  <!-- Your custom OG/Twitter tags -->
-  <meta property="og:locale" content="{{ .Site.LanguageCode }}" />
-  <!-- ... more OG tags ... -->
-
-  <meta property="og:locale" content="{{ .Site.LanguageCode }}" />
-  <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
-  <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} &middot; {{ .Site.Title }}{{ end }}" />
-  <meta property="og:description" content="{{ with (.Params.Summary | default .Params.Description) | default .Site.Params.description }}{{ . }}{{ end }}" />
-  <meta property="og:url" content="{{ .Permalink }}" />
-  <meta property="og:site_name" content="{{ .Site.Title }}" />
-  {{ with .Site.Params.images }}{{ range first 1 . }}
+  <!-- With proper custom Open Graph tags -->
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  {{ with .Params.cover.image }}
   <meta property="og:image" content="{{ . | absURL }}" />
-  {{ end }}{{ end }}
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} &middot; {{ .Site.Title }}{{ end }}" />
-  <meta name="twitter:description" content="{{ with (.Params.Summary | default .Params.Description) | default .Site.Params.description }}{{ . }}{{ end }}" />
-  {{ with .Site.Params.images }}{{ range first 1 . }}
-  <meta name="twitter:image" content="{{ . | absURL }}" />
-  {{ end }}{{ end }}
-  {{ with .Site.Params.social.twitter }}
-  <meta name="twitter:site" content="@{{ . }}" />
-  <meta name="twitter:creator" content="@{{ . }}" />
+  {{ else }}
+  <meta property="og:image" content="{{ .Site.Params.defaultImage | absURL }}" />
   {{ end }}
+
   {{/* Asset bundles */}}
   {{ $assets := newScratch }}
   {{ $cssScheme := resources.Get (printf "css/schemes/%s.css" (.Site.Params.colorScheme | default "blowfish")) }}
@@ -75,8 +60,8 @@
   {{ end }}
   {{ $bundleCSS := $assets.Get "css" | resources.Concat "css/main.bundle.css" | resources.Minify | resources.Fingerprint
   "sha512" }}
-  <link type="text/css" rel="stylesheet" href="{{ $bundleCSS.RelPermalink }}"
-    integrity="{{ $bundleCSS.Data.Integrity }}" />
+  <link rel="preload" href="{{ $bundleCSS.RelPermalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ $bundleCSS.RelPermalink }}"></noscript>
   {{ $jsAppearance := resources.Get "js/appearance.js" }}
   {{ $jsAppearance = $jsAppearance | resources.ExecuteAsTemplate "js/appearance.js" . | resources.Minify | resources.Fingerprint "sha512" }}
   <script type="text/javascript" src="{{ $jsAppearance.RelPermalink }}"
@@ -105,24 +90,9 @@
   <script src="{{ $zoomJS.RelPermalink }}" integrity="{{ $zoomJS.Data.Integrity }}"></script>
   {{ end }}
   {{/* Icons */}}
-  {{ if templates.Exists "partials/favicons.html" }}
-  {{ partialCached "favicons.html" .Site }}
-  {{ else }}
-  <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/manifest.json">
-  {{ end }}
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
   {{/* Site Verification */}}
   {{ with .Site.Params.verification.google }}
   <meta name="google-site-verification" content="{{ . }}" />
@@ -162,31 +132,4 @@
   {{ partialCached "extend-head.html" .Site }}
   {{ end }}
   <meta name="theme-color"/>
-  {{/* Firebase */}}
-  {{/* 
-  {{ with $.Site.Params.firebase }}
-  {{ if isset $.Site.Params "firebase" }}
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-  <script>
-
-    const firebaseConfig = {
-      apiKey: {{ $.Site.Params.firebase.apiKey }},
-      authDomain: {{ $.Site.Params.firebase.apiKey }},
-      projectId: {{ $.Site.Params.firebase.projectId }},
-      storageBucket: {{ $.Site.Params.firebase.storageBucket }},
-      messagingSenderId: {{ $.Site.Params.firebase.messagingSenderId }},
-      appId: {{ $.Site.Params.firebase.appId }},
-      measurementId: {{ $.Site.Params.firebase.measurementId }}
-    };
-
-    var app = firebase.initializeApp(firebaseConfig);
-    var db = firebase.firestore();
-    var auth = firebase.auth();
-
-  </script>
-  {{ end }}
-  {{ end }}
-  */}}
 </head>
