@@ -1,28 +1,25 @@
-<nav aria-label="breadcrumbs" class="text-sm mb-4">
-  <ol class="inline-flex items-center space-x-1 md:space-x-3">
-    <li class="inline-flex items-center">
-      <a href="{{ .Site.Home.RelPermalink }}" class="text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400">
-        {{ partial "icon.html" "home" }}
-        <span class="ml-1 md:ml-2">Home</span>
-      </a>
-    </li>
-    {{ range .Ancestors.Reverse }}
-      {{ if ne .RelPermalink "/" }}
-      <li>
-        <div class="flex items-center">
-          <span class="mx-1 text-gray-400">/</span>
-          <a href="{{ .RelPermalink }}" class="text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400">
-            {{ .Title }}
-          </a>
-        </div>
-      </li>
-      {{ end }}
-    {{ end }}
-    <li aria-current="page">
-      <div class="flex items-center">
-        <span class="mx-1 text-gray-400">/</span>
-        <span class="text-gray-500 dark:text-gray-400">{{ .Title }}</span>
-      </div>
+<nav class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="/posts" class="custom-breadcrumb">Posts</a>
+      <span class="breadcrumb-slash">/</span>
     </li>
   </ol>
 </nav>
+
+<style>
+  .custom-breadcrumb {
+    font-size: 0.90rem;
+    color: silver;
+  }
+  .custom-breadcrumb:hover {
+    color: #3b82f6;
+    text-decoration: underline;
+  }
+  .breadcrumb-slash {
+    font-size: 0.85rem;
+    color: #3b82f6;
+    margin: 0 -0.6rem;
+
+  }
+</style>

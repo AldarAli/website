@@ -50,13 +50,13 @@ smartTOCHideUnfocusedChildren = false
   showLikes = false
   showDateOnlyInArticle = true
   showDateUpdated = false
-  showAuthor = false
+  showAuthor = true
   showHero = true
   heroStyle = "background"
   layoutBackgroundBlur = true
   showBreadcrumbs = true
   showDraftLabel = true
-  showEdit = true
+  showEdit = false
   editURL = ""
   editAppendPath = true
   seriesOpened = true
@@ -118,13 +118,3 @@ smartTOCHideUnfocusedChildren = false
   globalWidgetMessage = ""
   globalWidgetColor = "#FFDD00"
   globalWidgetPosition = "Right"
-
-[fathomAnalytics]
-  # site = "ABC12345"
-  # domain = "llama.yoursite.com"
-
-[verification]
-  # google = ""
-  # bing = ""
-  # pinterest = ""
-  # yandex = ""

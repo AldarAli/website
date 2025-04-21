@@ -1,7 +1,11 @@
 +++
-title = 'Aircrack-ng-Capturing WPA Handshakes'
-date = 2025-03-28T05:18:45+01:00
+title = "Aircrack-ng-Capturing WPA Handshakes"
+date = 2025-03-28
 draft = false
+tags = ['Aircrack-ng', 'WPA', 'Wireless Networking']
+categories = ['Wireless Networking']
+description = 'A step-by-step guide to capturing WPA handshakes using Aircrack-ng, enabling monitor mode, and cracking the passphrase.'
+summary = 'A step-by-step guide to capturing WPA handshakes using Aircrack-ng, enabling monitor mode, and cracking the passphrase.'
 +++
 
 

@@ -26,10 +26,12 @@ googleAnalytics = "G-T3CSF57JSF"
   bio = ""
   links = [
     { email = "mailto:aldar@tech.tech" },
+    { rss = "https://aldar.tech/index.xml"},
     { linkedin = "https://linkedin.com/in/aldar-ali" },
     { github = "https://github.com/AldarAli" },
     { credly = "https://www.credly.com/users/aldar-ali" },
-    { accredible = "https://www.credential.net/profile/aldarali/wallet"}
+    { accredible = "https://www.credential.net/profile/aldarali/wallet"},
+    { goodreads = "https://www.goodreads.com/aldarali"}
     
   ]
 
@@ -44,7 +46,7 @@ googleAnalytics = "G-T3CSF57JSF"
   series = "series"
 
 [sitemap]
-  changefreq = "weekly"
+  changefreq = "daily"
   filename = "sitemap.xml"
   priority = 0.5
 
