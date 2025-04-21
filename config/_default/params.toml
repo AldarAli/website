@@ -18,7 +18,7 @@ disableImageOptimization = true
 disableTextInHeader = true
 
 #defaultFeaturedImage = ""
-defaultBackgroundImage = "/img/wallhaven5x.png"
+defaultBackgroundImage = "/img/marek-unsplash.jpg"
 
 highlightCurrentMenuArea = true
 smartTOC = true
@@ -35,7 +35,7 @@ smartTOCHideUnfocusedChildren = false
 
 [homepage]
   layout = "background" # valid options: page, profile, custom
-  homepageImage = "img/wallhaven5x.png"
+  homepageImage = "img/marek-unsplash.jpg"
   showRecent = true
   showRecentItems = 12
   showMoreLink = true

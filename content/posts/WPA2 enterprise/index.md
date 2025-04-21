@@ -5,7 +5,7 @@ description = "A step-by-step guide to attacking WPA2 enterprise networks using 
 summary = "A step-by-step guide to attacking WPA2 enterprise networks using hostapd-mana and freeradius."
 categories = ["Wireless Networking"]
 date = 2025-04-21
-tags = ["WPA2", "enterprise", "hostapd-mana", "freeradius"]
+tags = ["WPA2", "enterprise", "hostapd-mana", "freeradius", "oswp"]
 +++
 
 ## Introduction
