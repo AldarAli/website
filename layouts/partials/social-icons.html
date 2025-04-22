@@ -1,0 +1,14 @@
+<!-- Change icon-only links from: -->
+<a class="social-icon" href="{{ .url }}" target="_blank" rel="noopener noreferrer">
+  {{ partial "icon.html" .name }}
+</a>
+
+<!-- To: -->
+<a class="social-icon" 
+   href="{{ .url }}" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   aria-label="{{ .name | humanize }} profile"
+   title="Visit {{ .name | humanize }} profile">
+  {{ partial "icon.html" .name }}
+</a>
