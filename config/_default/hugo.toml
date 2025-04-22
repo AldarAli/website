@@ -43,8 +43,6 @@ googleAnalytics = "G-T3CSF57JSF"
 [taxonomies]
   tag = "tags"
   category = "categories"
-  author = "authors"
-  series = "series"
 
 [sitemap]
   changefreq = "daily"
@@ -66,14 +64,6 @@ googleAnalytics = "G-T3CSF57JSF"
     [[related.indices]]
         name = "categories"
         weight = 100
-
-    [[related.indices]]
-        name = "series"
-        weight = 50
-
-    [[related.indices]]
-        name = "authors"
-        weight = 10
 
     [[related.indices]]
         name = "date"
