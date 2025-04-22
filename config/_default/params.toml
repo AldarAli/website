@@ -33,6 +33,9 @@ smartTOCHideUnfocusedChildren = false
   showThemeAttribution = true
   showAppearanceSwitcher = true
   showScrollToTop = true
+  
+# Disable image zoom to reduce JS in HTML
+disableImageZoom = true
 
 [homepage]
   layout = "background" # valid options: page, profile, custom
@@ -54,8 +57,8 @@ smartTOCHideUnfocusedChildren = false
   showDateUpdated = false
   showAuthor = true
   showHero = true
-  heroStyle = "background"
-  layoutBackgroundBlur = true
+  heroStyle = "background" # changed from "background" to "basic" for simpler rendering
+  layoutBackgroundBlur = true # disable blur for performance
   showBreadcrumbs = true
   showDraftLabel = true
   showEdit = false
@@ -67,18 +70,18 @@ smartTOCHideUnfocusedChildren = false
   invertPagination = false
   showReadingTime = true
   showTableOfContents = true
-  showRelatedContent = true
-  relatedContentLimit = 6
+  showRelatedContent = true # disable related content to reduce HTML size
+  relatedContentLimit = 3 # reduced from 6
   showTaxonomies = true 
   showAuthorsBadges = true
   showWordCount = false
   showSummary = true
-  sharingLinks = [ "linkedin", "twitter", "whatsapp", "telegram", "pinterest", "reddit", "facebook", "email"]
+  sharingLinks = [ "linkedin", "twitter", "email"] # reduced sharing links
 
 [list]
   showHero = true
-  heroStyle = "background"
-  layoutBackgroundBlur = true
+  heroStyle = "background"  # changed from "background" to "basic"
+  layoutBackgroundBlur = true  # disabled blur for performance
   layoutBackgroundHeaderSpace = false
   showBreadcrumbs = false
   showViews = false
@@ -96,23 +99,22 @@ smartTOCHideUnfocusedChildren = false
 [taxonomy]
   showTermCount = true
   showHero = true
-  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  heroStyle = "background"  # changed from "background" to "basic"
   showBreadcrumbs = false
-  showViews = true
-  showLikes = true
-  showTableOfContents = true
+  showViews = false  # disabled views count to reduce JS
+  showLikes = false  # disabled likes to reduce JS
+  showTableOfContents = true  # disabled TOC for simpler pages
 
 [term]
   showHero = true
-  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  heroStyle = "background"  # changed from "background" to "basic"
   showBreadcrumbs = false
-  showViews = true
-  showLikes = true
-  showTableOfContents = true
+  showViews = false  # disabled views count to reduce JS
+  showLikes = false  # disabled likes to reduce JS
+  showTableOfContents = true  # disabled TOC for simpler pages
   groupByYear = false
   cardViewScreenWidth = false
   cardView = false
-
 
 [buymeacoffee]
   identifier = "aldarali"

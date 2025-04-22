@@ -92,3 +92,15 @@ googleAnalytics = "G-T3CSF57JSF"
   disableJSON = false
   disableSVG = false
   minifyOutput = true
+  [minify.tdewolff]
+    [minify.tdewolff.html]
+      keepWhitespace = false
+      keepComments = false
+      keepQuotes = false
+      keepEndTags = false
+    [minify.tdewolff.css]
+      keepCSS2 = false
+      precision = 0
+    [minify.tdewolff.js]
+      keepVarNames = false
+      precision = 0
