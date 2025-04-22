@@ -26,7 +26,7 @@
         {{ end }}
       {{ else }}
         {{ with .Resize "600x" }}
-        <div class="w-full thumbnail_card nozoom" style="background-image:url({{ .RelPermalink }});"></div>
+        <div class="w-full thumbnail_card lazy-bg nozoom" data-bg="{{ .RelPermalink }}" style="background-image:url(data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E);"></div>
         {{ end }}
       {{ end }}
       {{- else -}}
@@ -51,35 +51,47 @@
       </span>
       {{ end }}
 
-      <div class="px-6 py-4">
+      <div class="px-6 py-8">
 
-        {{ with .Params.externalUrl }}
-        <div>
-          <div
-            class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
-            {{ $.Title | emojify }}
-            <span class="text-xs align-top cursor-default text-neutral-400 dark:text-neutral-500">
-              <span class="rtl:hidden">&#8599;</span>
-              <span class="ltr:hidden">&#8598;</span>
-            </span>
+        {{ with .Site.Params.article.displayDate }}
+          {{ if and (not (eq $.Section "projects")) (eq $.Section "posts") }}
+            {{ partial "article-meta.html" (dict "context" $ "scope" "card") }}
+          {{ end }}
+        {{ end }}
+
+        <div class="flex justify-between">
+          <h2 class="text-2xl font-bold">{{ .Title }}</h2>
+        
+          {{ if $.Site.Params.article.showHero | default false }}
+          {{ with .Params.externalUrl }}
+          <div class="not-prose nozoom">
+            <a href="{{ . }}" class="" target="_blank" aria-label="{{ i18n "nav.read_more" }}">
+              <div class="inline-block min-w-[1rem]">
+                {{ partial "icon.html" "external-link" }}
+              </div>
+            </a>
           </div>
+          {{ else }}
+          <div class="not-prose nozoom">
+            <a href="{{ .RelPermalink }}" class="" aria-label="{{ i18n "nav.read_more" }}">
+              <div class="inline-block min-w-[1rem]">
+                {{ partial "icon.html" "arrow-circle-right" }}
+              </div>
+            </a>
+          </div>
+          {{ end }}
+          {{ end }}
         </div>
-        {{ else }}
-        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="{{ .RelPermalink }}">{{ .Title | emojify }}</div>
-        {{ end }}
-
-        <div class="text-sm text-neutral-500 dark:text-neutral-400">
-          {{ partial "article-meta/basic.html" . }}
+      
+        <div class="text-base py-4">
+          {{ if .Params.summary }}
+            {{ .Params.summary }}
+          {{ else if .Description }}
+            {{ .Description }}
+          {{ else }}
+            {{ .Summary }}
+          {{ end }}
         </div>
-
-        {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
-        <div class="py-1 prose dark:prose-invert">
-          {{ .Summary | plainify }}
-        </div>
-        {{ end }}
-      </div>
-      <div class="px-6 pt-4 pb-2">
 
       </div>
     </div>

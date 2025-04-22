@@ -22,6 +22,7 @@ googleAnalytics = "G-T3CSF57JSF"
 [params.author]
   name = "Aldar Ali"
   image = "img/me.jpeg"
+  imageAlt = "Aldar Ali"
   headline = "IT Consultant and Cybersecurity enthusiast"
   description = "I am an IT consultant and cybersecurity enthusiast with a focus on penetration testing, network security, and data protection. I have a passion for technology and a strong desire to help organizations improve their security posture. I am always looking for new challenges and opportunities to learn and grow in the field of cybersecurity."
   bio = ""

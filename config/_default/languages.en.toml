@@ -9,6 +9,7 @@ title = "Aldar Ali - IT Consultant and Cybersecurity Specialist"
   rtl = false
   dateFormat = "2006-01-02"
   logo = "img/logo.png"
+  logoAlt = "Aldar Ali - IT Consultant and Cybersecurity Specialist"
   #secondaryLogo = ""
   description = "IT consultant and cybersecurity enthusiast with a focus on penetration testing, network security, and data protection."
   keywords = ["Aldar Ali", "cybersecurity", "penetration testing", "IT consultant", "network security", "data protection"]

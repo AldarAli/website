@@ -42,13 +42,11 @@
 
 {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg")}}
     {{ with . }}
-    <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url({{ .RelPermalink }});" aria-label="{{ $alt }}">
+    <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom lazy-bg" data-bg="{{ .RelPermalink }}" style="background-image:url(data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E);" aria-label="{{ $alt }}">
     {{ end }}
 {{ else }}
     {{ with .Resize (print ($.Site.Params.backgroundImageWidth | default "1200") "x") }}
-    <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url({{ .RelPermalink }});" aria-label="{{ $alt }}">
+    <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom lazy-bg" data-bg="{{ .RelPermalink }}" style="background-image:url(data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E);" aria-label="{{ $alt }}">
     {{ end }}
 {{ end }}
 

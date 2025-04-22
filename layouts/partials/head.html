@@ -125,6 +125,11 @@
   {{ end }}
   {{/* Vendor */}}
   {{ partial "vendor.html" . }}
+  
+  {{/* Lazy Loading Script */}}
+  {{ $lazyloadJS := resources.Get "js/lazyload.js" | resources.Minify | resources.Fingerprint "sha512" }}
+  <script defer type="text/javascript" src="{{ $lazyloadJS.RelPermalink }}" integrity="{{ $lazyloadJS.Data.Integrity }}"></script>
+  
   {{/* Analytics */}}
   {{ partial "analytics/main.html" . }}
   {{/* Extend head - eg. for custom analytics scripts, etc. */}}
