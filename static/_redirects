@@ -1,4 +1,9 @@
+# Redirect rules for canonical URLs - helps search engines understand the proper canonical version
+# Redirect index.html to root path (canonical URL)
 /index.html / 301!
+# Redirect index.php to root path (canonical URL)
 /index.php / 301!
+# Redirect any subdirectory's index.html to the path without index.html
 /*/index.html /:splat 301!
+# Redirect any subdirectory's index.php to the path without index.php
 /*/index.php /:splat 301!

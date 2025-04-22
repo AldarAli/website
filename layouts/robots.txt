@@ -1,6 +1,11 @@
 User-agent: *
 {{- if hugo.IsProduction | or (eq .Site.Params.env "production") }}
 Allow: /
+# Explicitly disallow indexing of index.html and index.php variants
+Disallow: */index.html
+Disallow: */index.php
+Disallow: /index.html
+Disallow: /index.php
 {{- else }}
 Disallow: /
 {{- end }}
