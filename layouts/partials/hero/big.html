@@ -26,6 +26,7 @@
 {{ end }}
 
 {{- $alt := .Page.Title -}}
+{{- with .Page.Params.featureimagealt }}{{ $alt = . }}{{ end -}}
 {{- with .Page.Params.alt }}{{ $alt = . }}{{ end -}}
 
 {{- with $featured -}}

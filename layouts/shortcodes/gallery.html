@@ -1,5 +1,10 @@
 {{ $id := delimit (slice "gallery" (partial "functions/uid.html" .)) "-" }}
 
+{{ if .Get "title" }}
+<div class="gallery-title">{{ .Get "title" }}</div>
+{{ end }}
+
 <div id="{{ $id }}" class="gallery">
-  {{ .Inner }}
+  {{ .Inner | replaceRE "<img src=\"([^\"]+)\" class=\"([^\"]+)\"( alt=\"([^\"]+)\")? */>" "<img src=\"$1\" class=\"$2\" alt=\"$4\" />" | 
+     replaceRE "<img src=\"([^\"]+)\" class=\"([^\"]+)\" />" "<img src=\"$1\" class=\"$2\" alt=\"Image in gallery\" />" | safeHTML }}
 </div>
