@@ -29,7 +29,7 @@
   {{ with .Site.Params.robots }}
   <meta name="robots" content="{{ . }}" />
   {{ end }}
-  <link rel="canonical" href="https://aldar.tech{{ .Permalink | replaceRE "(/|)index\\.(html|php)$" "/" }}" />
+  <link rel="canonical" href="{{ .Permalink | replaceRE "(/|)index\\.(html|php)$" "/" }}" />
   {{ range .AlternativeOutputFormats -}}
   {{ printf `
   <link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink ($.Site.Title | emojify) |
