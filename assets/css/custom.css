@@ -1,3 +1,17 @@
+/* San Francisco Font Implementation */
+:root {
+    --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+html {
+    font-family: var(--font-sans);
+}
+
+pre, code, kbd {
+    font-family: var(--font-mono);
+}
+
 @media screen and (min-width: 0px) {
     .customthumb {
         width: 100%;
@@ -5,7 +19,6 @@
         object-fit: cover;
         box-shadow: 10px 10px 30px 2px rgba(0, 0, 0, 0.6);
     }
-
 
     .customEntitityLogo {
         background-color: aliceblue;
