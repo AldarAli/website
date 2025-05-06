@@ -43,7 +43,10 @@
   <meta property="og:image" content="{{ . | absURL }}" />
   {{ else }}
   <meta property="og:image" content="{{ .Site.Params.defaultImage | absURL }}" />
+  <meta property="og:image:alt" content="{{ .Site.Title | default "My Personal Website" }}" />
   {{ end }}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="{{ .Site.Params.defaultImage | default "/img/logo.png" | absURL }}" />
 
   {{/* Asset bundles */}}
   {{ $assets := newScratch }}

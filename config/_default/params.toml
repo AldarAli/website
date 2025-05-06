@@ -17,6 +17,8 @@ mainSections = ["posts"]
 disableImageOptimization = true
 disableTextInHeader = true
 
+# Add default image for social media and search engines
+defaultImage = "/img/logo.png"
 #defaultFeaturedImage = ""
 defaultBackgroundImage = "/img/technologybackground.jpg"
 defaultBackgroundImageAlt = "Technology background image"
