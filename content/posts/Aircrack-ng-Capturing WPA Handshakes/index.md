@@ -17,7 +17,7 @@ Before we get started with Aircrack-ng, we need to capture a WPA 4-way handshake
 
 To begin, enable monitor mode on your wireless interface (`wlan0`).
 
-![Alt text](image1.png)
+![starting the monitor mode](image1.png)
 After putting our `wlan0` interface in monitor mode, we now have an interface called `wlan0mon`. We then identify the channel of the target AP and gather its BSSID using:
 
 ```bash
