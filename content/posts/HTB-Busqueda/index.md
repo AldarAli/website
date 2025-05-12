@@ -1,7 +1,7 @@
 +++
 title = "HackTheBox-Busqueda machine walkthrough"
 date = 2025-05-11
-draft = false
+draft = true
 tags = ["HackTheBox", "HTB", "Walkthrough"]
 categories = []
 description = "A walkthrough of the HackTheBox Busqueda machine, perfect for beginners"
