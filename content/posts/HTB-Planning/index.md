@@ -1,9 +1,9 @@
 +++
 title = "HackTheBox-Planning machine walkthrough"
-date = 2025-05-06
+date = 2025-05-21
 draft = true
-tags = ["hackthebox", "pentest", "grafana", "cve-2024-9264", "privilege escalation"]
-categories = ["CTF", "Penetration Testing"]
+tags = ["hackthebox", "grafana", "cve-2024-9264", "privilege escalation"]
+categories = ["CTF", "Penetration Testing", "Vulnerability Exploitation"]
 description = "A detailed walkthrough of the Planning machine from HackTheBox, exploiting a critical Grafana vulnerability (CVE-2024-9264) and leveraging crontab-ui for privilege escalation"
 summary = "In this walkthrough, I demonstrate how to compromise the Planning machine on HackTheBox by discovering a vulnerable Grafana instance, exploiting CVE-2024-9264 for initial access, and escalating privileges through a crontab-ui service."
 +++
@@ -44,7 +44,7 @@ ffuf -w /usr/share/wordlists/seclists/Discovery/DNS/bitquark-subdomains-top10000
 
 ![subdomain enumeration results](subdomain-enumeration.png)
 
-Success! I found a subdomain called `grafana`.
+I found a subdomain called `grafana`.
 
 ### What is Grafana?
 
@@ -81,8 +81,6 @@ CVE-2024-9264 is a critical vulnerability in Grafana that affects versions up to
 1. Execute arbitrary system commands on the host server
 2. Access local files on the system (Local File Inclusion)
 3. Potentially gain a reverse shell to the target system
-
-The vulnerability occurs because of improper validation of user-supplied inputs in the authentication proxy feature, which can be exploited even if the authentication proxy isn't actively being used.
 
 ### Exploitation Process
 
