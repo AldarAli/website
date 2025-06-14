@@ -17,7 +17,7 @@ enableEmoji = true
 googleAnalytics = "G-T3CSF57JSF"
 
 [pagination]
-  pagerSize = 18
+  pagerSize = 27
 
 [params.author]
   name = "Aldar Ali"
@@ -82,7 +82,7 @@ googleAnalytics = "G-T3CSF57JSF"
   disableJS = false
   disableJSON = false
   disableSVG = false
-  minifyOutput = true
+  minifyOutput = false
   [minify.tdewolff]
     [minify.tdewolff.html]
       keepWhitespace = false

@@ -4,7 +4,7 @@
 #
 # Refer to the theme docs for more details about each of these parameters.
 
-colorScheme = ""
+colorScheme = "blowfish"
 defaultAppearance = "dark" # valid options: light or dark
 autoSwitchAppearance = false
 
@@ -14,7 +14,7 @@ enableCodeCopy = true
 mainSections = ["posts"]
 # robots = ""
 
-disableImageOptimization = true
+disableImageOptimization = false
 disableTextInHeader = true
 
 # Add default image for social media and search engines
@@ -44,7 +44,7 @@ disableImageZoom = true
   homepageImage = "img/wallhaven.png"
   homepageImageAlt = "background image"
   showRecent = true
-  showRecentItems = 12
+  showRecentItems = 9
   showMoreLink = true
   showMoreLinkDest = '/posts'
   cardView = true
@@ -59,9 +59,8 @@ disableImageZoom = true
   showDateUpdated = false
   showAuthor = true
   showHero = true
-  heroStyle = "background" # changed from "background" to "basic" for simpler rendering
-  layoutBackgroundBlur = true # disable blur for performance
-  showBreadcrumbs = true
+  heroStyle = "background"
+  layoutBackgroundBlur = true 
   showDraftLabel = true
   showEdit = false
   editURL = ""
@@ -82,8 +81,8 @@ disableImageZoom = true
 
 [list]
   showHero = true
-  heroStyle = "background"  # changed from "background" to "basic"
-  layoutBackgroundBlur = true  # disabled blur for performance
+  heroStyle = "background" 
+  layoutBackgroundBlur = true 
   layoutBackgroundHeaderSpace = false
   showBreadcrumbs = false
   showViews = false
@@ -101,19 +100,19 @@ disableImageZoom = true
 [taxonomy]
   showTermCount = true
   showHero = true
-  heroStyle = "background"  # changed from "background" to "basic"
+  heroStyle = "background" 
   showBreadcrumbs = false
-  showViews = false  # disabled views count to reduce JS
-  showLikes = false  # disabled likes to reduce JS
-  showTableOfContents = true  # disabled TOC for simpler pages
+  showViews = false  
+  showLikes = false  
+  showTableOfContents = true
 
 [term]
   showHero = true
-  heroStyle = "background"  # changed from "background" to "basic"
+  heroStyle = "background"  
   showBreadcrumbs = false
-  showViews = false  # disabled views count to reduce JS
-  showLikes = false  # disabled likes to reduce JS
-  showTableOfContents = true  # disabled TOC for simpler pages
+  showViews = true
+  showLikes = false
+  showTableOfContents = true
   groupByYear = false
   cardViewScreenWidth = false
   cardView = false
