@@ -2,7 +2,7 @@
 title = "Network Cabling"
 date = 2025-06-14
 draft = false
-tags = ["networking", "cabling", "ethernet", "fiber optics", "CCNA"]
+tags = ["ethernet", "fiber optics", "CCNA"]
 categories = ["Networking", "Cabling"]
 description = "Understanding Network Cabling: Coaxial, Twisted Pair, and Fiber Optics Cables for CCNA Certification"
 summary = "An overview of network cabling, including coaxial cables, twisted pair cabling (UTP and STP), and fiber optics. Learn about their designs, types, and how they impact network performance. This guide is essential for CCNA certification preparation."
