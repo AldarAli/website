@@ -28,9 +28,9 @@ In an IPv6 Global Unicast address, the first three bits being 001 is crucial for
 
 - **Binary Representation**: IPv6 addresses are 128 bits long. The first three bits being 001 means that the address falls within a specific range.
 - **Hexadecimal Translation**: Each hexadecimal digit represents 4 bits. Therefore, the first three bits (001) can translate to multiple hexadecimal values. Specifically:  
-    
-    - 0010 in binary is 2 in hexadecimal.
-    - 0011 in binary is 3 in hexadecimal.
+
+- 0010 in binary is 2 in hexadecimal.
+- 0011 in binary is 3 in hexadecimal.
   
 This means that an IPv6 Global Unicast address can start with either a 2 or a 3 in its hexadecimal form. However, in literature, it's often represented as starting with 2000::/3, indicating that the first three bits are 001.  
 
@@ -59,7 +59,8 @@ This means that an IPv6 Global Unicast address can start with either a 2 or a 3 
 - **Usage**: These addresses are only usable on a local network segment and cannot be routed.
 - **Comparison**: IPv6 link-local addresses are similar to IPv4 APIPA addresses, which are also self-assigned and only usable on the local network segment.
 - **Router Communication**: IPv6 link-local addresses are often used for inter-router communication within the same network segment.
-![[CCNA/IPv6/ipv6-link-local.png]]
+![IPv6 link local](ipv6-link-local.png)
+
 ## IPv6-unique-local
 
 - **IPv6 Unique Local Address**: These addresses can be routed within your company but are not routable on the public internet.
