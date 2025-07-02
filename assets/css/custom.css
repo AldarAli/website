@@ -127,3 +127,20 @@
 td {
     vertical-align: middle !important;
 }
+
+/* Table of Contents Spacing Improvements */
+.toc ul,
+.toc li {
+    line-height: 1.8 !important;
+}
+
+/* Increase Table of Contents width */
+.toc-right {
+    max-width: 350px !important;
+}
+
+.toc-right > div,
+.toc-inside > div {
+    min-width: 300px !important;
+    max-width: 350px !important;
+}
