@@ -12,6 +12,8 @@
   lineNos = false
   lineNumbersInTable = false
 
-[tableOfContents]
-  startLevel = 1
-  endLevel = 6
+[markup]
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = true
+    startLevel = 2
