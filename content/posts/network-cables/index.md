@@ -1,6 +1,6 @@
 +++
 title = "Network Cabling"
-date = 2025-06-14
+date = "2025-06-14"
 draft = false
 tags = ["ethernet", "fiber optics", "CCNA"]
 categories = ["Networking", "Cabling"]
@@ -31,11 +31,11 @@ A very popular type of copper cabling used in networking today is twisted pair c
 ## Unshielded Twisted Pair (UTP)
 The reason these pairs of wires are twisted around one another is to help combat electromagnetic interference (EMI). Since a radio wave cannot go through a perfect conductor, we take these two wires, which are really good conductors, and we wrap them around one another into a pair. That way one wire is protecting the other wire from interference and vice versa. And when we say unshielded twisted pair, we mean that there is no additional shielding. There's no foil wrapped around these wires; it's just the twisting alone that is providing the EMI protection.
 
-![Unshielded twisted pair cable](unshilded-twisted-pair-cable.png)
+![Unshielded twisted pair cable](unshielded-twisted-pair-cable.png)
 
 ## Shielded Twisted Pair (STP)
 
-In some cases the unshielded twisted pair (UTP) cable is not enough. For example, if we are in an environment that has a lot of electromagnetic interference, the unshielded twisted pair might not be sufficient. In this case we can use the shielded twisted pair (STP) cable. This is where we're still twisting those pairs of wires, but to further protect from **EMI**, each pair is individually wrapped in foil. And in some shielded twisted pair cables, there's even a metal braiding that goes around all eight wires to add another level of protection.
+In some cases the unshielded twisted pair (UTP) cable is not enough. For example, if we are in an environment that has a lot of electromagnetic interference, the unshielded twisted pair might not be sufficient. In this case we can use the shielded twisted pair (STP) cable. This is where we're still twisting those pairs of wires, but to further protect from EMI, each pair is individually wrapped in foil. And in some shielded twisted pair cables, there's even a metal braiding that goes around all eight wires to add another level of protection.
 
 ![Shielded twisted pair cable](shielded-twisted-pair-cable.png)
 
