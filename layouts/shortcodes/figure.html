@@ -1,6 +1,16 @@
 {{ $disableImageOptimization := .Site.Params.disableImageOptimization | default false }}
 {{ if .Get "default" }}
-  {{ template "_internal/shortcodes/figure.html" . }}
+  {{- $src := .Get "src" -}}
+  {{- $alt := .Get "alt" -}}
+  {{- $caption := .Get "caption" -}}
+  {{- $class := .Get "class" -}}
+  {{- $title := .Get "title" -}}
+  {{- $width := .Get "width" -}}
+  {{- $height := .Get "height" -}}
+  <figure{{ with $class }} class="{{ . }}"{{ end }}>
+    <img src="{{ $src }}"{{ with $alt }} alt="{{ . }}"{{ end }}{{ with $title }} title="{{ . }}"{{ end }}{{ with $width }} width="{{ . }}"{{ end }}{{ with $height }} height="{{ . }}"{{ end }} />
+    {{ with $caption }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+  </figure>
 {{ else }}
   {{- $url := urls.Parse (.Get "src") }}
   {{- $altText := .Get "alt" }}
