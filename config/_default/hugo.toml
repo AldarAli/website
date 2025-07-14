@@ -95,5 +95,3 @@ googleAnalytics = "G-T3CSF57JSF"
     [minify.tdewolff.js]
       keepVarNames = false
       precision = 0
-
-timeout = "60s"

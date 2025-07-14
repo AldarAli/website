@@ -22,6 +22,7 @@ So the way a coax cable helps protect itself from EMI is by having the signal be
 
 ## Coaxial Cable Types
 Common types of coaxial cables include RG-59 and RG-6 (used in home environments), RG-58 (used in older 10BASE2 networks), and RG-8/U (used in older 10BASE5 networks).
+
 ![Coaxial cables types](coax-cable-type.png)
 
 # Twisted Pair Cabling
@@ -52,19 +53,20 @@ There is a serious danger of using regular network cabling in these plenum areas
 ## Connectors
 
 The RJ-45 connector is the most common for Ethernet networks, while RJ-11 and RJ-14 connectors are used for telephone connections.
+
 ![Connector types for twisted pair cables](connectors.png)
 
 ## The Wiring Standard 
 
 There are different standards that say which color wire goes into which pin. The two most common standards out there are the T568A and T568B standards. And one is not better than the other; you just want to make sure that you're using the same standard at each end of the cable and that the jack you're plugging into is using that same standard. But in networks today, the T568B standard is most commonly used.
 
-![Wiring standards](T568-wiring-standars.png)
+![Wiring standards](T568-wiring-standards.png)
 
 # Ethernet Standards for Twisted Pair Cables
 
 Twisted pair cabling falls under different categories. We want to identify the Category or categories used by specific Ethernet standards along with the throughput and distance limitations of those standards.
 
-![Ethernet standards](ethernet-standars.png)
+![Ethernet standards](ethernet-standards.png)
 
 # Ethernet Cable Types
 
@@ -188,7 +190,7 @@ Single-mode fiber eliminates multimode delay distortion because:
 
 Fiber optic cables are categorized by their transmission speeds and distances, similar to twisted pair cabling.
 
-![Ethernet standards for fiber optic cables](ethernet-standars-fiber.png)
+![Ethernet standards for fiber optic cables](ethernet-standards-fiber.png)
 
 # Fiber Optic Cable Connectors
 
