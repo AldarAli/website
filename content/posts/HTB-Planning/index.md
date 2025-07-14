@@ -1,7 +1,7 @@
 +++
 title = "HackTheBox-Planning machine walkthrough"
 date = 2025-05-21
-draft = true
+draft = false
 tags = ["hackthebox", "grafana", "cve-2024-9264", "privilege escalation"]
 categories = ["CTF", "Penetration Testing", "Vulnerability Exploitation"]
 description = "A detailed walkthrough of the Planning machine from HackTheBox, exploiting a critical Grafana vulnerability (CVE-2024-9264) and leveraging crontab-ui for privilege escalation"
