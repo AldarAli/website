@@ -1,7 +1,7 @@
 +++
 title = "Network Cabling"
 date = 2025-06-14
-draft = false
+draft = true
 tags = ["ethernet", "fiber optics", "CCNA"]
 categories = ["Networking", "Cabling"]
 description = "Understanding Network Cabling: Coaxial, Twisted Pair, and Fiber Optics Cables for CCNA Certification"
