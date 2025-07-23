@@ -20,7 +20,7 @@ disableTextInHeader = true
 # Add default image for social media and search engines
 defaultImage = "/img/logo.png"
 #defaultFeaturedImage = ""
-defaultBackgroundImage = "/img/wallhaven.png"
+defaultBackgroundImage = "/img/wallhaven-binary.png"
 defaultBackgroundImageAlt = "background image"
 
 highlightCurrentMenuArea = true
@@ -41,7 +41,7 @@ disableImageZoom = true
 
 [homepage]
   layout = "background" # valid options: page, profile, custom
-  homepageImage = "img/wallhaven.png"
+  homepageImage = "img/wallhaven-binary.png"
   homepageImageAlt = "background image"
   showRecent = true
   showRecentItems = 9

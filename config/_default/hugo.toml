@@ -6,6 +6,13 @@ baseURL = "https://aldar.tech/"
 defaultContentLanguage = "en"
 disableLanguages = ['pt-pt']
 
+# Enable multiple languages
+[languages]
+  [languages.en]
+    weight = 1
+  [languages.no]
+    weight = 2
+
 enableRobotsTXT = true
 summaryLength = 30
 
@@ -34,7 +41,6 @@ googleAnalytics = "G-T3CSF57JSF"
     { credly = "https://www.credly.com/users/aldar-ali" },
     { accredible = "https://www.credential.net/profile/aldarali/wallet"},
     { goodreads = "https://www.goodreads.com/aldarali"}
-    
   ]
 
 

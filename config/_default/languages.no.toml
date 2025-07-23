@@ -1,0 +1,32 @@
+languageCode = "no"
+languageName = "Norsk"
+weight = 2
+title = "Aldar Ali - IT-konsulent og Cybersikkerhetsspesialist"
+
+[params]
+  displayName = "Norsk"
+  isoCode = "no"
+  rtl = false
+  dateFormat = "2006-01-02"
+  logo = "img/logo.png"
+  logoAlt = "Aldar Ali - IT-konsulent og Cybersikkerhetsspesialist"
+  #secondaryLogo = ""
+  description = "IT-konsulent og cybersikkerhetsentusiast med fokus på penetrasjonstesting, nettverkssikkerhet og databeskyttelse."
+  keywords = ["Aldar Ali", "cybersikkerhet", "penetrasjonstesting", "IT-konsulent", "nettverkssikkerhet", "databeskyttelse"]
+  
+  [params.author]
+    name = "Aldar Ali"
+    image = "img/me.jpeg"
+    imageAlt = "Aldar Ali"
+    headline = "IT-konsulent og Cybersikkerhetsentusiast"
+    description = "Jeg er en IT-konsulent og cybersikkerhetsentusiast med fokus på penetrasjonstesting, nettverkssikkerhet og databeskyttelse. Jeg har en lidenskap for teknologi og et sterkt ønske om å hjelpe organisasjoner med å forbedre deres sikkerhetsholdning. Jeg søker alltid nye utfordringer og muligheter til å lære og vokse innen cybersikkerhet."
+    bio = ""
+    links = [
+      { email = "mailto:contact@aldar.tech" },
+      { rss = "https://aldar.tech/index.xml"},
+      { linkedin = "https://linkedin.com/in/aldar-ali" },
+      { github = "https://github.com/AldarAli" },
+      { credly = "https://www.credly.com/users/aldar-ali" },
+      { accredible = "https://www.credential.net/profile/aldarali/wallet"},
+      { goodreads = "https://www.goodreads.com/aldarali"}
+    ]

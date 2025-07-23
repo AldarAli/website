@@ -1,5 +1,5 @@
 ---
-title: "Resume"
+title: "CV"
 date: 2025-07-21
 draft: false
 showBreadcrumbs: false
@@ -21,45 +21,45 @@ layoutBackgroundHeaderSpace: false
 
 ---
 
-## Experience
+## Erfaring
 
 <table>
     <thead>
         <tr>
-            <th>Company</th>
+            <th>Selskap</th>
             <th>Link</th>
-            <th>Role</th>
-            <th>Dates</th>
-            <th>Location</th>
+            <th>Rolle</th>
+            <th>Datoer</th>
+            <th>Plassering</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td rowspan=3><img class="customEntitityLogo" src="kdi.png"/></td>
+            <td rowspan=3><img class="customEntitityLogo" src="/resume/kdi.png"/></td>
             <td rowspan=3><a href="https://www.kriminalomsorgen.no/" target="_blank">KDI</a></td>
         </tr>
         <tr>
-            <td>IT Consultant</td>
-            <td>2023 - Present</td>
-            <td>Horten </br>Norway</td>
+            <td>IT-konsulent</td>
+            <td>2023 - Nåværende</td>
+            <td>Horten </br>Norge</td>
         </tr>
         <tr>
         </tr>
         <tr>
-            <td><img class="customEntitityLogo" src="Sikt.png"/></td>
+            <td><img class="customEntitityLogo" src="/resume/Sikt.png"/></td>
             <td><a href="https://sikt.no/en/home" target="_blank">Sikt</a></td>
-            <td>Internship System Developer</td>
+            <td>Praksis Systemutvikler</td>
             <td>2023 - 2023</td>
-            <td>Oslo</br>Norway</td>
+            <td>Oslo</br>Norge</td>
         </tr>
         <tr>
-            <td rowspan=3><img class="customEntitityLogo" src="Nordlaks-logo.png"/></td>
+            <td rowspan=3><img class="customEntitityLogo" src="/resume/Nordlaks-logo.png"/></td>
             <td rowspan=3><a href="https://www.nordlaks.no/" target="_blank">Nordlaks</a></td>
         </tr>
         <tr>
-            <td>Process operator</td>
+            <td>Prosessoperatør</td>
             <td>2018 - 2022</td>
-            <td>Stokmarknes</br>Norway </td>
+            <td>Stokmarknes</br>Norge </td>
         </tr>
         <tr>
         </tr>
@@ -68,34 +68,34 @@ layoutBackgroundHeaderSpace: false
 
 ---
 
-## Education
+## Utdanning
 
 <table>
     <thead>
         <tr>
-            <th>School</th>
+            <th>Skole</th>
             <th>Link</th>
-            <th>Degree</th>
-            <th>Date</th>
+            <th>Grad</th>
+            <th>Dato</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td><img class="customEntitityLogo" src="oswp.png"/></td>
+            <td><img class="customEntitityLogo" src="/resume/oswp.png"/></td>
             <td><a href="https://www.credential.net/ab1a01f6-de14-46d9-bea9-3348d06150bc#acc.ZUCkABHb" target="_blank">Offensive Security</a></td>
             <td>Offensive Security Wireless Professional (OSWP)</td>
             <td>2025</td>
         </tr>
         <tr>
-            <td><img class="customEntitityLogo" src="network_pen.png"/></td>
+            <td><img class="customEntitityLogo" src="/resume/network_pen.png"/></td>
             <td><a href="https://www.credential.net/6c6a403c-3dee-4042-b60f-3df12e7a4d85#acc.s5m4bJQp" target="_blank">Offensive Security</a></td>
             <td>Network Penetration Testing Essentials</td>
             <td>2025</td>
         </tr>
         <tr>
-            <td><img class="customEntitityLogo" src="usn.png"/></td>
-            <td><a href="https://www.usn.no/english/" target="_blank">University of South-Eastern Norway</a></td>
-            <td>Bachelor's degree in IT and information systems.</td>
+            <td><img class="customEntitityLogo" src="/resume/usn.png"/></td>
+            <td><a href="https://www.usn.no/english/" target="_blank">Universitetet i Sørøst-Norge</a></td>
+            <td>Bachelorgrad i IT og informasjonssystemer.</td>
             <td>2024</td>
         </tr>
     </tbody>
