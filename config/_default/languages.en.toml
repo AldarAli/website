@@ -1,7 +1,7 @@
 languageCode = "en"
 languageName = "English"
 weight = 1
-title = "Aldar Ali - IT Consultant and Cybersecurity Specialist"
+title = "Aldar Ali - System Engineer and Cybersecurity enthusiast"
 
 [params]
   displayName = "English"
@@ -9,7 +9,7 @@ title = "Aldar Ali - IT Consultant and Cybersecurity Specialist"
   rtl = false
   dateFormat = "2006-01-02"
   logo = "img/logo.png"
-  logoAlt = "Aldar Ali - IT Consultant and Cybersecurity Specialist"
+  logoAlt = "Aldar Ali - System Engineer and Cybersecurity enthusiast"
   #secondaryLogo = ""
-  description = "IT consultant and cybersecurity enthusiast with a focus on penetration testing, network security, and data protection."
-  keywords = ["Aldar Ali", "cybersecurity", "penetration testing", "IT consultant", "network security", "data protection"]
+  description = "System Engineer and cybersecurity enthusiast with a focus on penetration testing, network security, and data protection."
+  keywords = ["Aldar Ali", "cybersecurity", "penetration testing", "System Engineer", "network security", "data protection"]

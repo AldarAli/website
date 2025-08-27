@@ -1,0 +1,66 @@
+{{/*
+  Usage:
+  {{< resume-table kind="experience" >}}
+  {{< resume-table kind="education" >}}
+
+  Automatically chooses data by site language:
+  data/resume/<kind>.<lang>.yaml
+*/}}
+{{ $kind := .Get "kind" | default "experience" }}
+{{ $lang := .Page.Language.Lang | default "en" }}
+{{/* Try language-aware data resolutions */}}
+{{ $resume := index site.Data "resume" }}
+{{ $items := index $resume $kind }}
+{{ if not $items }}
+  {{/* Fallback: combined key like experience.en */}}
+  {{ $items = index $resume (printf "%s.%s" $kind $lang) }}
+{{ end }}
+{{ if and (not $items) (index $resume $kind) }}
+  {{/* Fallback: nested map resume.<kind>.<lang> */}}
+  {{ $items = index (index $resume $kind) $lang }}
+{{ end }}
+
+{{ if not $items }}
+<p>No {{ $kind }} data found.</p>
+{{ else }}
+<table>
+  <thead>
+    {{ if eq $kind "experience" }}
+    <tr>
+      <th>{{ i18n "resume.company" | default "Company" }}</th>
+      <th>{{ i18n "resume.link" | default "Link" }}</th>
+      <th>{{ i18n "resume.role" | default "Role" }}</th>
+      <th>{{ i18n "resume.dates" | default "Dates" }}</th>
+      <th>{{ i18n "resume.location" | default "Location" }}</th>
+    </tr>
+    {{ else }}
+    <tr>
+      <th>{{ i18n "resume.school" | default "School" }}</th>
+      <th>{{ i18n "resume.link" | default "Link" }}</th>
+      <th>{{ i18n "resume.degree" | default "Degree" }}</th>
+      <th>{{ i18n "resume.date" | default "Date" }}</th>
+    </tr>
+    {{ end }}
+  </thead>
+  <tbody>
+    {{ range $items }}
+    {{ if eq $kind "experience" }}
+    <tr>
+      <td><img class="customEntitityLogo" src="{{ .logo }}" alt="{{ .company }} logo"/></td>
+      <td><a href="{{ .website }}" target="_blank" rel="noopener">{{ .company }}</a></td>
+      <td>{{ .role }}</td>
+      <td>{{ .dates }}</td>
+      <td>{{ .location }}</td>
+    </tr>
+    {{ else }}
+    <tr>
+      <td><img class="customEntitityLogo" src="{{ .logo }}" alt="{{ .school }} logo"/></td>
+      <td><a href="{{ .website }}" target="_blank" rel="noopener">{{ .school }}</a></td>
+      <td>{{ .degree }}</td>
+      <td>{{ .date }}</td>
+    </tr>
+    {{ end }}
+    {{ end }}
+  </tbody>
+  </table>
+{{ end }}

@@ -1,0 +1,28 @@
+
+- company: Guard Automation AS
+  website: https://www.guardautomation.no/
+  role: System Engineer IT
+  dates: Sep 2025 - Present
+  location: Sandefjord, Norway
+  logo: /resume/Guard.jpeg
+
+- company: KDI
+  website: https://www.kriminalomsorgen.no/
+  role: IT Consultant
+  dates: Oct 2022 - Aug 2025
+  location: Horten, Norway
+  logo: /resume/kdi.png
+
+- company: Sikt
+  website: https://sikt.no/en/home
+  role: Internship System Developer
+  dates: Jun 2023 - Aug 2023
+  location: Oslo, Norway
+  logo: /resume/Sikt.png
+
+- company: Nordlaks
+  website: https://www.nordlaks.no/
+  role: Process operator
+  dates: 2018 - 2022
+  location: Stokmarknes, Norway
+  logo: /resume/Nordlaks-logo.png

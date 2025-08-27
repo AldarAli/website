@@ -1,7 +1,7 @@
 languageCode = "no"
 languageName = "Norsk"
 weight = 2
-title = "Aldar Ali - IT-konsulent og Cybersikkerhetsspesialist"
+title = "Aldar Ali - Systemingeniør og Cybersikkerhetsentusiast"
 
 [params]
   displayName = "Norsk"
@@ -9,17 +9,17 @@ title = "Aldar Ali - IT-konsulent og Cybersikkerhetsspesialist"
   rtl = false
   dateFormat = "2006-01-02"
   logo = "img/logo.png"
-  logoAlt = "Aldar Ali - IT-konsulent og Cybersikkerhetsspesialist"
+  logoAlt = "Aldar Ali - Systemingeniør og Cybersikkerhetsentusiast"
   #secondaryLogo = ""
-  description = "IT-konsulent og cybersikkerhetsentusiast med fokus på penetrasjonstesting, nettverkssikkerhet og databeskyttelse."
-  keywords = ["Aldar Ali", "cybersikkerhet", "penetrasjonstesting", "IT-konsulent", "nettverkssikkerhet", "databeskyttelse"]
-  
+  description = "Systemingeniør og cybersikkerhetsentusiast med fokus på penetrasjonstesting, nettverkssikkerhet og databeskyttelse."
+  keywords = ["Aldar Ali", "cybersikkerhet", "penetrasjonstesting", "Systemingeniør", "nettverkssikkerhet", "databeskyttelse"]
+
   [params.author]
     name = "Aldar Ali"
     image = "img/me.jpeg"
     imageAlt = "Aldar Ali"
-    headline = "IT-konsulent og Cybersikkerhetsentusiast"
-    description = "Jeg er en IT-konsulent og cybersikkerhetsentusiast med fokus på penetrasjonstesting, nettverkssikkerhet og databeskyttelse. Jeg har en lidenskap for teknologi og et sterkt ønske om å hjelpe organisasjoner med å forbedre deres sikkerhetsholdning. Jeg søker alltid nye utfordringer og muligheter til å lære og vokse innen cybersikkerhet."
+    headline = "Systemingeniør og Cybersikkerhetsentusiast"
+    description = "Jeg er en Systemingeniør og cybersikkerhetsentusiast med fokus på penetrasjonstesting, nettverkssikkerhet og databeskyttelse. Jeg har en lidenskap for teknologi og et sterkt ønske om å hjelpe organisasjoner med å forbedre deres sikkerhetsholdning. Jeg søker alltid nye utfordringer og muligheter til å lære og vokse innen cybersikkerhet."
     bio = ""
     links = [
       { email = "mailto:contact@aldar.tech" },
